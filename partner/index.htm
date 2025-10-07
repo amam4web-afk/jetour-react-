@@ -1,0 +1,304 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JETOUR global partners</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="JETOUR Auto Global Dealer Network Overview: Uruguay,Ecuador,Bolivia,Oman,Angola,Myanmar,United Arab Emirates,Bahrain,Chile,Saudi Arabia,Kuwait……">
+    <meta name="keywords" content="JETOUR Dealer network, JETOUR global partners">
+    <script src="../ajax/libs/babel-polyfill/7.12.1/polyfill.js"></script>
+    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AoJ1ABgicR3Qa-3ZegqaNpolVMDl-500ApWSWQq4k8-CX0ZrX12I2jarGVq0s5Hx&setLang=en-US" defer=""></script>
+    <script src="../data/tms/website/html/js/utils/react-development.js"></script>
+    <script src="../data/tms/website/html/js/utils/react-dom.development.js"></script>
+    <script src="../data/tms/website/html/js/utils/babel.js"></script>
+    <script src="../data/tms/website/html/js/utils/vue.min.js"></script>
+
+</head>
+
+
+<script src="../data/tms/website/html/js/utils/jquery.js"></script>
+<script src="../data/tms/website/html/js/utils/swiper-bundle.min.js"></script>
+
+<link rel="stylesheet" href="../data/tms/website/html/css/swiper-bundle.min.css">
+<link rel="stylesheet" href="../data/tms/website/html/css/map/map.css">
+<link rel="stylesheet" href="../data/tms/website/html/css/header/header.css">
+<link rel="stylesheet" href="../data/tms/website/html/css/global.css">
+<link rel="stylesheet" href="../data/tms/website/html/css/reset.css">
+
+<body>
+    <div id="map">
+        <div id="header-box"></div>
+        <div class="pc-pad">
+            <div class="map">
+                <div class="left">
+                    <h1 class="title">GLOBAL PARTNERS</h1>
+                    <div class="input-box">
+                        <input type="text" placeholder="Please Enter City ..." v-model="searchInput">
+                        <div class="img-box">
+                            <img src="../data/tms/website/html/images/map/search.png" alt="">
+                        </div>
+                    </div>
+
+                    <ul id="menu">
+                        <li v-if="dataLoaded" v-for="(item,index) in filteredList" :key="item.id">
+                            <div class="header" :style="{borderBottom:item.id==id?'1px solid rgba(0,0,0,.2)':'none'}" @click="openContent(item.id)">
+                                <div class="left-box">
+                                    <img :src="src + item.image" alt="">
+                                    <div>{{item.country_name_cn}}</div>
+                                </div>
+                                <img class="right-box" :style="{transform:item.id==id?'rotate(0)':'rotate(-90deg)'}" src="../data/tms/website/html/images/map/arrow.png" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="content-box" v-for="data in item.children" v-if="id == item.id" :style="{background:data.id == childId?'#f8f9fa':'#fff'}" @click="handleClickContent(data,index)">
+                                    <div class="top">
+                                        <div class="title" :style="{color:data.id==childId?'#5e968b':'#333'}">
+                                            {{data.city_name_cn}}
+                                        </div>
+                                        <div class="link-box" v-if="data.url" @click.stop="window.open(data.url)">
+                                            <img class="link" src="../data/tms/website/html/images/map/link.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="distributorAddress">
+                                        {{data.address}}
+                                    </div>
+                                    <div class="phone">{{data.telephone}}</div>
+                                    <div class="phone">{{data.email}}</div>
+                                    <div class="bottom" v-if="data.face_book||data.face_book">
+                                        <img v-if="data.face_book" src="../data/tms/website/html/images/map/facebook.png" alt="" @click.stop="window.location.href=data.face_book">
+                                     	<img v-if="data.twitter" src="../data/tms/website/html/images/map/twt.png" alt="" @click.stop="window.location.href=data.twitter"> 
+                                        <img v-if="data.you_tube" src="../data/tms/website/html/images/map/yootub.png" @click.stop="window.location.href=data.you_tube" alt="">
+                                        <img v-if="data.ins" src="../data/tms/website/html/images/map/ins_icon.png" alt="" @click.stop="window.location.href=data.ins"> 
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <h2 v-else="">Loading</h2>
+                    </ul>
+                </div>
+                <div id="myMap" @click.stop="mapClick" style="position: relative; width: 100%; height: 100%"></div>
+            </div>
+            <div class="jump" @click="window.location.href='/business'">
+                <div class="jump-title">Become Our<br>Partners</div>
+                <img src="../data/tms/website/html/images/map/jump.jpg" alt="">
+                <div class="jump-click">
+                    <div>Click for more</div>
+                    <img src="../data/tms/website/html/images/common/O-R.png">
+                </div>
+            </div>
+        </div>
+        <div class="mb-only mb-map">
+            <div id="mapMb" style="position: relative; width: 100%; height: 100%"></div>
+            <div @click="searchShow = true" class="mb-search-box">
+                <img src="../data/svg/search.svg" alt="">
+            </div>
+            <div v-if="searchShow" class="mb-all-search">
+                <div class="mb-input-box">
+                    <div class="icon-box">
+                        <img src="../data/tms/website/html/images/map/search.png" alt="">
+                    </div>
+                    <input type="text" placeholder="Please Enter City..." v-model="searchInput">
+                    <div @click="searchShow = false,searchInput=''" class="text">Cancel</div>
+                </div>
+
+                <ul v-if="searchInput.length>0" class="searchResult_mb">
+                    <li v-for="(item,index) in filteredList" :key="item.id" @click="changeMbCountry(item.id),searchShow = false,searchInput=''">
+                        <div class="left">
+                            <img :src="src+item.image" alt="">
+                            <div>{{item.country_name_cn}}</div>
+                        </div>
+                        <img v-if="mbId == index" class="right" src="../data/tms/website/html/images/map/select.png" alt="">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-map-list">
+                <div class="top" @click="openMbChooseCountry">
+                    <div class="left">
+                        <img :src="dataImgSrc" alt="">
+                        <div>{{dataCountryName}}</div>
+                    </div>
+                    <div class="right">
+                        <img src="../data/tms/website/html/images/map/arrow-right.png" alt="">
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="swiper map-mb-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="(item,index) in getDataChildren_md" @click.stop="handleClickContent(item,index)" :key="index">
+                                <div class="state">{{item.city_name_cn}}</div>
+                                <div class="distributorAddress">
+                                    {{item.address}}
+                                </div>
+                                <div class="phone">{{item.telephone}}</div>
+                                <div class="eamil">{{item.eamil}}</div>
+                                <div class="icon-box">
+                                    <img v-if="item.face_book" src="../data/tms/website/html/images/map/facebook.png" alt="" @click.stop="window.location.href=item.face_book">
+                                    <img v-if="item.twitter" src="../data/tms/website/html/images/map/twt.png" alt="" @click.stop="window.location.href=item.twitter">
+                                    <img v-if="item.you_tube" src="../data/tms/website/html/images/map/yootub.png" alt="" @click.stop="window.location.href=item.you_tube">
+                                    <img v-if="item.ins" src="../data/tms/website/html/images/map/ins_icon.png" alt="" @click.stop="window.location.href=item.ins">
+                                </div>
+                                <!-- 已修復的原版手機版供應商鏈接 -->
+                                <div class="link" :style="{background:item.city_name_cn==state?'#5e968b':'rgba($color: #b0bac8, $alpha: 0.2)'}" @click.stop="window.open(item.url)">
+                                    <img src="../data/tms/website/html/images/map/link.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="mask" v-if="isShow"></div>
+                <div v-if="isShow" class="mb-map-country-list">
+                    <div class="header">
+                        <div>PLEASE SELECT COUNTRY</div>
+                        <img @click="isShow = false" src="../data/tms/website/html/images/map/close.png" alt="">
+                    </div>
+                    <ul>
+                        <li v-for="(item,index) in data" :key="item.id" @click="changeMbCountry(item.id)">
+                            <div class="left">
+                                <img :src="src+item.image" alt="">
+                                <div>{{item.country_name_cn}}</div>
+                            </div>
+                            <img v-if="mbId == index" class="right" src="../data/tms/website/html/images/map/select.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/babel">
+    var vm = new Vue({
+        el: "#map",
+        data: {
+            id: 0,
+            childId: -1,
+            //這裡填的應該是第一個門店的id參數。不同語言下第一個門店的id參數不一樣，需要注意。
+            mbId: 211,
+            state: "",
+            isShow: false,
+            searchShow: false,
+            data: [{}],
+            src: '',
+            searchInput: '',
+            dataLoaded: false,
+        },
+        created() {
+            const getData = $.ajax({
+                url: "/prj/archive/getParterList?categoryCode=globalpartners",
+                type: "post",
+                dataType: "json",
+                data: {
+                    lang_id: 'en'
+                },
+                success: (res) => {
+                    this.data = res.data;
+                    this.data = this.data.sort((a, b) => a.country_name_cn.localeCompare(b.country_name_cn));
+                    this.mbId = this.data[0].id
+                    //以此查看門店參數
+                    console.log(this.data);
+                },
+            });
+        },
+        mounted() {
+            const swiper = new Swiper(".map-mb-swiper", {
+                loop: false,
+                slidesPerView: 'auto',
+                slideToClickedSlide: true,
+                spaceBetween: 20,
+                direction: 'horizontal',
+                ///js/utils/swiper-3.4.2.jquery.min.js不能用
+                //將swiper改為/js/utils/swiper-bundle.min.js後，頁面加載時swiper不能用，但重新調整頁面大小後又能用了
+                //添加observer:true解決。來源：https://stackoverflow.com/questions/42260363/swiper-doesnt-work-on-page-load
+                observer: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "progressbar",
+                },
+            });
+        },
+        computed: {
+            filteredList() {
+                if (this.data.length > 1) {
+                    // return this.data;
+                    this.dataLoaded = true;
+                    return this.data.filter(dataEach => dataEach.country_name_cn.toLowerCase().includes(this.searchInput.toLowerCase()))
+                }
+                else {
+                    console.log('empty array');
+                    console.log('filteredList else ' + this.dataLoaded);
+                    this.dataLoaded = false;
+                }
+            },
+            dataImgSrc() {
+                if (this.data.length > 1) {
+                    return this.src + this.data.find(dataEach => dataEach.id == this.mbId).image;
+                }
+            },
+            dataCountryName() {
+                if (this.data.length > 1) {
+                    return this.data.find(dataEach => dataEach.id == this.mbId).country_name_cn;
+                }
+            },
+            getDataChildren_md() {
+                if (this.data.length > 1) {
+                    return this.data.find(dataEach => dataEach.id == this.mbId).children;
+                }
+            }
+        },
+        methods: {
+            handleClickContent(item, index) {
+                this.childId = item.id;
+                setMap(item.latitude, item.longitude, 15, index, item.city_name_cn, item);
+            },
+            openContent(id) {
+                this.id = this.id == id ? -1 : id;
+            },
+            openMbChooseCountry() {
+                this.isShow = true;
+            },
+            changeMbCountry(id) {
+                this.mbId = id;
+                this.isShow = false;
+            },
+            mapClick() {
+            },
+        },
+    });
+</script>
+<script type="text/babel" src="../data/tms/website/html/js/map/index.js"></script>
+<script src="../data/tms/website/html/js/utils/rem.js"></script>
+<!-- 引入header组件 -->
+<script type="text/babel" src="../data/tms/website/html/scripts/header.js"></script>
+<script type="text/babel" src="../data/tms/website/html/components/common/header/menu.js"></script>
+</html>

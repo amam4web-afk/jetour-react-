@@ -1,0 +1,301 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>T1-720</title>
+    <link rel="stylesheet" href="../data/tms/website/html/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../data/tms/website/html/css/360/threesixtyX95.css" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="../gtag/js?id=G-VN12DGN69Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag('config', 'G-VN12DGN69Z');
+    </script>
+
+    <!-- Global site tag (gtag.js) 2 - Google Analytics -->
+    <script async="" src="../gtag/js-1?id=G-4XVPPT646J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4XVPPT646J');
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?93e6a501cca7194deb663b85d343185d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="threesixty">
+        <div id="spinner">
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="num">0</div>
+        </div>
+        <div class="threesixty_images_box">
+            <ol id="threesixty_images"></ol>
+            <div class="icon-360">
+                <img src="../data/tms/website/html/images/360/icon.png" alt="">
+                <div class="icon-title">360° View</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="interior-box1">
+        <img onclick="changeInteriorBlack()" style="width: 0.37rem; height: 0.37rem; padding: 0.05rem;border-radius: 100%;"
+             src="/data/tms/website/html/images/carModel/t2/T2_interior_Black_Red.png" />
+        <img style=" width: 0.37rem; height: 0.37rem; padding: 0.05rem; border: 1px solid #d3d3d3; border-radius: 100%;" 
+            src="/data/tms/website/html/images/carModel/t2/T2_interior_Brown.png" />
+    </div> -->
+    <div class="interior" id="interior">
+        <img class="interior-icon" src="../data/tms/website/html/images/360/interior-icon.png" alt="">
+    </div>
+    <!-- <div class="interior" id="interior1">
+        <img class="interior-icon" src="/data/tms/website/html/images/360/interior-icon.png" alt="" />
+    </div>
+    <div class="interior" id="interior2">
+        <img class="interior-icon" src="/data/tms/website/html/images/360/interior-icon.png" alt="" />
+    </div> -->
+
+
+    <div class="back-box" onclick="window.location.href='/T1'">
+        <img class="back-box-img" src="../data/tms/website/html/images/360/back.png" alt="">
+        <div class="back-box-title">BACK</div>
+    </div>
+    <div class="color-box">
+        <img class="active-color" onclick="changeColor(1)" src="../data/tms/website/html/images/360/T1/Green.png">
+        <img onclick="changeColor(2)" src="../data/tms/website/html/images/360/T1/White.png">
+        <img onclick="changeColor(3)" src="../data/tms/website/html/images/360/T1/Silver.png">
+        <img onclick="changeColor(4)" src="../data/tms/website/html/images/360/T1/Gold.png">
+        <img onclick="changeColor(5)" src="../data/tms/website/html/images/360/T1/Black.png">
+    </div>
+    <div class="interior-box">
+        <img src="../data/tms/website/html/images/360/T1/T1_interior_blackgreen.png" data-line="/data/tms/website/html/images/360/interior/T1_Black_green.jpg">
+        <img src="../data/tms/website/html/images/360/T1/T1_interior_blackgrey.png" data-line="/data/tms/website/html/images/360/interior/T1_Black_grey.jpg">
+        <img src="../data/tms/website/html/images/360/T1/T1_interior_blackorange.png" data-line="/data/tms/website/html/images/360/interior/T1_Black_orange.jpg">
+    </div>
+    <div class="tab-list-left">
+        <div class="tab tab-active">EXTERIOR</div>
+        <div class="tab" onclick="showInterior()">INTERIOR</div>
+    </div>
+    <div class="tab-list-right">
+        <div class="tab" onclick="showThreesixty()">EXTERIOR</div>
+        <div class="tab tab-active">INTERIOR</div>
+    </div>
+    <script src="../data/tms/website/html/js/utils/rem.js"></script>
+    <script src="../data/tms/website/html/js/utils/heartcode-canvasloader-min.js"></script>
+    <script src="../data/tms/website/html/js/utils/jquery-1.11.0.min.js"></script>
+    <script src="../data/tms/website/html/js/utils/threesixtyX70.js"></script>
+    <script src="../data/tms/website/html/js/utils/three.min.js"></script>
+    <script src="../data/tms/website/html/js/utils/panolens.min.js"></script>
+    <script>
+        threeSixFun("/data/tms/website/html/images/360/T1_360_Green/car", 73, '.png');
+        function changeColor(value) {
+
+            $(".color-box img").removeClass("active-color");
+            $(".color-box img").eq(value - 1).addClass("active-color");
+            if (value == 1) {
+                threeSixFun("/data/tms/website/html/images/360/T1_360_Green/car", 73, '.png');
+            }
+            if (value == 2) {
+                threeSixFun("/data/tms/website/html/images/360/T1_360_White/car", 72, '.png');
+            }
+            if (value == 3) {
+                threeSixFun("/data/tms/website/html/images/360/T1_360_Silver/car", 73, '.png');
+            }
+            if (value == 4) {
+                threeSixFun("/data/tms/website/html/images/360/T1_360_Gold/car", 73, '.png');
+            }
+            if (value == 5) {
+                threeSixFun("/data/tms/website/html/images/360/T1_360_Black/car", 73, '.png');
+            }
+
+        }
+    </script>
+    <script>
+        $(function () {
+            let panorama = new PANOLENS.ImagePanorama(
+                "/data/tms/website/html/images/360/interior/T1_Black_green.jpg"
+            );
+            let viewer = new PANOLENS.Viewer({
+                container: document.querySelector("#interior"),
+                controlButtons: ["fullscreen", "video"],
+                initialLookAt: new THREE.Vector3(80000, 0, 0),
+                autoRotate: false, //自动播放
+                autoRotateActivationDuration: 2000, //时长
+                autoRotateSpeed: 0.3, //速度
+            });
+            viewer.add(panorama);
+
+            // let panorama1 = new PANOLENS.ImagePanorama(
+            //     "/data/tms/website/html/images/360/interior/T1_Black_grey.jpg"
+            // );
+            // let viewer1 = new PANOLENS.Viewer({
+            //     container: document.querySelector("#interior1"),
+            //     controlButtons: ["fullscreen", "video"],
+            //     initialLookAt: new THREE.Vector3(80000, 0, 0),
+            //     autoRotate: false, //自动播放
+            //     autoRotateActivationDuration: 2000, //时长
+            //     autoRotateSpeed: 0.3, //速度
+            // });
+            // viewer1.add(panorama1);
+
+            // let panorama2 = new PANOLENS.ImagePanorama(
+            //     "/data/tms/website/html/images/360/interior/T1_Black_grey.jpg"
+            // );
+            // let viewer2 = new PANOLENS.Viewer({
+            //     container: document.querySelector("#interior2"),
+            //     controlButtons: ["fullscreen", "video"],
+            //     initialLookAt: new THREE.Vector3(80000, 0, 0),
+            //     autoRotate: false, //自动播放
+            //     autoRotateActivationDuration: 2000, //时长
+            //     autoRotateSpeed: 0.3, //速度
+            // });
+            // viewer2.add(panorama2);
+            $(".interior-box img").click(function(){
+            // function changeInteriorBrown(index) {
+                
+                var index=$(this).index()
+                console.log("index",index)
+                var line=$(this).attr("data-line")
+                console.log("line",$(this),line)
+                $(".interior-box img").removeClass("on")
+                $(this).addClass("on")
+                panorama.load(line)
+
+            })
+        });
+    </script>
+    <script>
+        function showInterior() {
+            $("#interior").css("z-index", "55555");
+            $(".tab-list-right").css("display", "flex");
+            // $(".interior-box1").css("display", "none");
+            $(".interior-box").css("display", "block");
+            $(".interior-box img").eq(0).addClass('on')
+        }
+        function showThreesixty() {
+            $(".interior").css("z-index", "-1");
+            // $("#interior1").css("z-index", "-1");
+            // $("#interior1").css("z-index", "-1");
+            $(".interior-box").css("display", "none");
+            // $(".interior-box1").css("display", "none");
+            // $(".interior-box2").css("display", "none");
+            $(".tab-list-right").css("display", "none");
+        }
+       
+        // function changeInteriorBrown() {
+        //     $("#interior").css("z-index", "-1");
+        //     $(".interior-box").css("display", "none");
+        //     $(".interior-box1").css("display", "block");
+        //     $("#interior1").css("z-index", "5555");
+        // }
+        // function changeInteriorBlack() {
+        //     $("#interior").css("z-index", "5555");
+        //     $("#interior1").css("z-index", "-1");
+        //     $(".interior-box").css("display", "block");
+        //     $(".interior-box1").css("display", "none");
+        // }
+        // function changeInteriorBlack1() {
+        //     $("#interior").css("z-index", "5555");
+        //     $("#interior1").css("z-index", "-1");
+        //     $("#interior1").css("z-index", "-1");
+      
+        // }
+        
+    </script>
+</body>
+<style>
+    .interior-box {
+        display: none;
+        position: fixed;
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 555551;
+       
+    }
+
+    /* .interior-box1 {
+        position: fixed;
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 555551;
+        display: none;
+    } */
+
+    .interior-box img {
+        cursor: pointer;
+        width: 0.37rem; 
+        height: 0.37rem; 
+        padding: 0.05rem;
+       border-radius: 100%;
+    }
+    .interior-box img.on{
+        border: 1px solid #d3d3d3;
+    }
+    .color-box img {
+        border-radius: 100%;
+    }
+
+    .color-box {
+        height: 0.37rem;
+    }
+
+    html,
+    body {
+        overflow: hidden;
+    }
+</style>
+
+</html>

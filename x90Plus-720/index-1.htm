@@ -1,0 +1,188 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>x90Plus-720</title>
+<link rel="stylesheet" href="../data/tms/website/html/css/reset-1.css" type="text/css">
+<link rel="stylesheet" href="../data/tms/website/html/css/360/threesixtyX95-1.css" type="text/css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="../gtag/js-2?id=G-VN12DGN69Z"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag('config', 'G-VN12DGN69Z');
+</script>
+
+<!-- Global site tag (gtag.js) 2 - Google Analytics -->
+<script async="" src="../gtag/js-3?id=G-4XVPPT646J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4XVPPT646J');
+    </script>
+<script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?93e6a501cca7194deb663b85d343185d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+</head>
+
+<body>
+	<div id="threesixty">
+		<div id="spinner">
+			<div class="loading">
+				<span></span> <span></span> <span></span> <span></span> <span></span>
+			</div>
+			<div class="num">0</div>
+		</div>
+		<div class="threesixty_images_box">
+			<ol id="threesixty_images"></ol>
+			<div class="icon-360">
+				<img src="../data/tms/website/html/images/360/icon-1.png" alt="">
+				<div class="icon-title">360° View</div>
+			</div>
+		</div>
+	</div>
+	<div id="interior">
+		<img class="interior-icon" src="../data/tms/website/html/images/360/interior-icon-1.png" alt="">
+	</div>
+	<div class="back-box" onclick="window.location.href='/x90Plus'">
+		<img class="back-box-img" src="../data/tms/website/html/images/360/back-1.png" alt="">
+		<div class="back-box-title">BACK</div>
+	</div>
+	<div class="color-box">
+		<img class="active-color" onclick="changeColor(1)" src="../data/tms/website/html/images/360/color1-1.jpg"> <img onclick="changeColor(2)" src="../data/tms/website/html/images/360/color2-1.jpg"> <img onclick="changeColor(3)" src="../data/tms/website/html/images/carModel/x70p/grey-1.png"> <img onclick="changeColor(4)" src="../data/tms/website/html/images/360/color4-1.jpg"> <img onclick="changeColor(5)" src="../data/tms/website/html/images/360/color5-1.jpg">
+	</div>
+	<div class="tab-list-left">
+		<div class="tab tab-active">EXTERIOR</div>
+		<div class="tab" onclick="showInterior()">INTERIOR</div>
+	</div>
+	<div class="tab-list-right">
+		<div class="tab" onclick="showThreesixty()">EXTERIOR</div>
+		<div class="tab tab-active">INTERIOR</div>
+	</div>
+	<script src="../data/tms/website/html/js/utils/rem-1.js"></script>
+	<script src="../data/tms/website/html/js/utils/heartcode-canvasloader-min-1.js"></script>
+	<script src="../data/tms/website/html/js/utils/jquery-1.11.0.min-1.js"></script>
+	<script src="../data/tms/website/html/js/utils/threesixtyX90P-1.js"></script>
+	<script src="../data/tms/website/html/js/utils/three.min-1.js"></script>
+	<script src="../data/tms/website/html/js/utils/panolens.min-1.js"></script>
+	<script>
+      threeSixFun();
+      let img0 = $(".color-box img").eq(0);
+      let img1 = $(".color-box img").eq(1);
+      let img2 = $(".color-box img").eq(2);
+      let img3 = $(".color-box img").eq(3);
+      let img4 = $(".color-box img").eq(4);
+      function changeColor(value) {
+        if (value == 1) {
+          img0.addClass("active-color");
+          img1.removeClass("active-color");
+          img2.removeClass("active-color");
+          img3.removeClass("active-color");
+          img4.removeClass("active-color");
+          threeSixFun("/data/tms/website/html/images/360/x90p_black/JETOUR_X90_zilong_black_", 72);
+        }
+        if (value == 2) {
+          img0.removeClass("active-color");
+          img1.addClass("active-color");
+          img2.removeClass("active-color");
+          img3.removeClass("active-color");
+          img4.removeClass("active-color");
+          threeSixFun("/data/tms/website/html/images/360/x90p_blue/JETOUR_X90_zilong_blue_", 72);
+        }
+        if (value == 3) {
+          img0.removeClass("active-color");
+          img1.removeClass("active-color");
+          img2.addClass("active-color");
+          img3.removeClass("active-color");
+          img4.removeClass("active-color");
+          threeSixFun("/data/tms/website/html/images/360/x90p_grey/JETOUR_X90_zilong_grey_", 72);
+        }
+        if (value == 4) {
+          img0.removeClass("active-color");
+          img1.removeClass("active-color");
+          img2.removeClass("active-color");
+          img3.addClass("active-color");
+          img4.removeClass("active-color");
+          threeSixFun("/data/tms/website/html/images/360/x90p_violet/JETOUR_X90_zilong_violet_", 72);
+        }
+        if (value == 5) {
+          img0.removeClass("active-color");
+          img1.removeClass("active-color");
+          img2.removeClass("active-color");
+          img3.removeClass("active-color");
+          img4.addClass("active-color");
+          threeSixFun("/data/tms/website/html/images/360/x90p_white/JETOUR_X90_zilong_white_", 72);
+        }
+      }
+    </script>
+	<script>
+      $(function () {
+        let panorama = new PANOLENS.ImagePanorama(
+          "/data/tms/website/html/images/360/interior/JETOUR_X90_zilong_in.jpg"
+        );
+        let viewer = new PANOLENS.Viewer({
+          container: document.querySelector("#interior"),
+          controlButtons: ["fullscreen", "video"],
+          initialLookAt: new THREE.Vector3(80000, 0, 0),
+          autoRotate: false, //自动播放
+          autoRotateActivationDuration: 2000, //时长
+          autoRotateSpeed: 0.3, //速度
+        });
+        viewer.add(panorama);
+      });
+    </script>
+	<script>
+      function showInterior() {
+        $("#interior").css("z-index", "55555");
+        $(".tab-list-right").css("display", "flex");
+      }
+      function showThreesixty() {
+        $("#interior").css("z-index", "-1");
+        $(".tab-list-right").css("display", "none");
+      }
+    </script>
+</body>
+</html>

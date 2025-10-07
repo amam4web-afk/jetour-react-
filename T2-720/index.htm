@@ -1,0 +1,267 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>T2-720</title>
+    <link rel="stylesheet" href="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/css/360/threesixtyX95.css" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://goldenrod-herring-465287.hostingersite.com/gtag/js?id=G-VN12DGN69Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag('config', 'G-VN12DGN69Z');
+    </script>
+
+    <!-- Global site tag (gtag.js) 2 - Google Analytics -->
+    <script async="" src="https://goldenrod-herring-465287.hostingersite.com/gtag/js-1?id=G-4XVPPT646J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4XVPPT646J');
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?93e6a501cca7194deb663b85d343185d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="threesixty">
+        <div id="spinner">
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="num">0</div>
+        </div>
+        <div class="threesixty_images_box">
+            <ol id="threesixty_images"></ol>
+            <div class="icon-360">
+                <img src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/icon.png" alt="">
+                <div class="icon-title">360° View</div>
+            </div>
+        </div>
+    </div>
+    <div class="interior-box">
+        <img style="
+        width: 0.37rem;
+        height: 0.37rem;
+        padding: 0.05rem;
+        border: 1px solid #d3d3d3; border-radius: 100%;" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/T2_interior_Black_Red.png">
+        <img style="width: 0.37rem; height: 0.37rem; padding: 0.05rem; border-radius: 100%;" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/T2_interior_Brown.png" onclick="changeInteriorBrown()">
+    </div>
+    <div class="interior-box1">
+        <img onclick="changeInteriorBlack()" style="width: 0.37rem; height: 0.37rem; padding: 0.05rem;border-radius: 100%;" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/T2_interior_Black_Red.png">
+        <img style="
+        width: 0.37rem;
+        height: 0.37rem;
+        padding: 0.05rem;
+        border: 1px solid #d3d3d3;
+        border-radius: 100%;
+      " src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/T2_interior_Brown.png">
+    </div>
+    <div id="interior">
+        <img class="interior-icon" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/interior-icon.png" alt="">
+    </div>
+    <div id="interior1">
+        <img class="interior-icon" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/interior-icon.png" alt="">
+
+    </div>
+    <div class="back-box" onclick="window.location.href='/T2'">
+        <img class="back-box-img" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/back.png" alt="">
+        <div class="back-box-title">BACK</div>
+    </div>
+    <div class="color-box">
+        <!--<img class="active-color" onclick="changeColor(1,this)" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/Highway Gray1.png" />-->
+        <img class="active-color" onclick="changeColor(2,this)" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/Night-Blackcar1.png">
+        <img onclick="changeColor(3,this)" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/Sandcar1.png">
+        <img onclick="changeColor(4,this)" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/Sun-Orangecar1.png">
+        <img onclick="changeColor(5,this)" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/Lime-Greencar1.png">
+        <img onclick="changeColor(6,this)" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/Misty-Cyancar1.png">
+        <img onclick="changeColor(7,this)" src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/carModel/t2/Silver-Snowcar1.png">
+    </div>
+    <div class="tab-list-left">
+        <div class="tab tab-active">EXTERIOR</div>
+        <div class="tab" onclick="showInterior()">INTERIOR</div>
+    </div>
+    <div class="tab-list-right">
+        <div class="tab" onclick="showThreesixty()">EXTERIOR</div>
+        <div class="tab tab-active">INTERIOR</div>
+    </div>
+    <script src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/js/utils/rem.js"></script>
+    <script src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/js/utils/heartcode-canvasloader-min.js"></script>
+    <script src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/js/utils/jquery-1.11.0.min.js"></script>
+    <script src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/js/utils/threesixtyX90P.js"></script>
+    <script src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/js/utils/three.min.js"></script>
+    <script src="https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/js/utils/panolens.min.js"></script>
+    <script>
+        threeSixFun("https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/T2_360_Black/car", 36);
+        let img0 = $(".color-box img").eq(0);
+        function changeColor(value, e) {
+            $(".color-box img").removeClass("active-color");
+            $(e).addClass("active-color");
+            if (value == 1) {
+                threeSixFun("https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/T2_360_Grey/car", 36);
+            }
+            if (value == 2) {
+                threeSixFun("https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/T2_360_Black/car", 36);
+            }
+            if (value == 3) {
+                threeSixFun("https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/T2_360_Sand/car", 36);
+            }
+            if (value == 4) {
+                threeSixFun("https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/T2_360_SunOrange/car", 36);
+            }
+            if (value == 5) {
+                threeSixFun("https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/T2_360_LimeGreen/car", 36);
+            }
+            if (value == 6) {
+                threeSixFun("https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/T2_360_MistyCyan/car", 36);
+            }
+            if (value == 7) {
+                threeSixFun("https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/T2_360_SilverSnow/car", 36);
+            }
+        }
+    </script>
+    <script>
+        $(function () {
+            let panorama = new PANOLENS.ImagePanorama(
+                "https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/interior/T2_back_Red.jpg"
+            );
+            let viewer = new PANOLENS.Viewer({
+                container: document.querySelector("#interior"),
+                controlButtons: ["fullscreen", "video"],
+                initialLookAt: new THREE.Vector3(80000, 0, 0),
+                autoRotate: false, //自动播放
+                autoRotateActivationDuration: 2000, //时长
+                autoRotateSpeed: 0.3, //速度
+            });
+            viewer.add(panorama);
+
+            let panorama1 = new PANOLENS.ImagePanorama(
+                "https://goldenrod-herring-465287.hostingersite.com/data/tms/website/html/images/360/interior/T2_brown.jpg"
+            );
+            let viewer1 = new PANOLENS.Viewer({
+                container: document.querySelector("#interior1"),
+                controlButtons: ["fullscreen", "video"],
+                initialLookAt: new THREE.Vector3(80000, 0, 0),
+                autoRotate: false, //自动播放
+                autoRotateActivationDuration: 2000, //时长
+                autoRotateSpeed: 0.3, //速度
+            });
+            viewer1.add(panorama1);
+        });
+    </script>
+    <script>
+        function showInterior() {
+            $("#interior").css("z-index", "55555");
+            $(".tab-list-right").css("display", "flex");
+            $(".interior-box1").css("display", "none");
+            $(".interior-box").css("display", "block");
+        }
+        function showThreesixty() {
+            $("#interior").css("z-index", "-1");
+            $("#interior1").css("z-index", "-1");
+            $(".interior-box").css("display", "none");
+            $(".interior-box1").css("display", "none");
+            $(".tab-list-right").css("display", "none");
+        }
+        function changeInteriorBrown() {
+            $("#interior").css("z-index", "-1");
+            $(".interior-box").css("display", "none");
+            $(".interior-box1").css("display", "block");
+            $("#interior1").css("z-index", "5555");
+        }
+        function changeInteriorBlack() {
+            $("#interior").css("z-index", "5555");
+            $("#interior1").css("z-index", "-1");
+            $(".interior-box").css("display", "block");
+            $(".interior-box1").css("display", "none");
+        }
+    </script>
+</body>
+<style>
+    .interior-box {
+        position: fixed;
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 555551;
+        display: none;
+    }
+
+    .interior-box1 {
+        position: fixed;
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 555551;
+        display: none;
+    }
+
+    .interior-box img {
+        cursor: pointer;
+    }
+
+    .color-box img {
+        border-radius: 100%;
+    }
+
+    .color-box {
+        height: 0.37rem;
+    }
+
+    html,
+    body {
+        overflow: hidden;
+    }
+</style>
+
+</html>

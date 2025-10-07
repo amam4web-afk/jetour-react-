@@ -1,0 +1,436 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Enter the website and leave your contact information. Your comments and suggestions are also cordially welcomed;please feel free to tell us and we will answer you within 48hrs.">
+  <meta name="keywords" content="Contact JETOUR,JETOUR email">
+  <title>Contact JETOUR, Write to Us | JETOUR Global</title>
+  <script src="../data/tms/website/html/js/utils/rem.js"></script>
+  <link rel="stylesheet" href="../data/tms/website/html/css/reset.css">
+  <link rel="stylesheet" href="../data/tms/website/html/css/header/header.css">
+  <link rel="stylesheet" href="../data/tms/website/html/css/footer.css">
+  <link rel="stylesheet" href="../data/tms/website/html/css/global.css">
+  <link rel="stylesheet" href="../data/tms/website/html/css/contact/contact.css">
+  <link rel="stylesheet" href="../data/tms/website/html/css/message/message.css">
+  <script src="../data/tms/website/html/js/utils/jquery.js"></script>
+  <script src="../data/tms/website/html/js/utils/react-development.js"></script>
+  <script src="../data/tms/website/html/js/utils/react-dom.development.js"></script>
+  <script src="../data/tms/website/html/js/utils/babel.js"></script>
+  <script src="../data/tms/website/html/js/utils/vue.min.js"></script>
+  <script src="../data/tms/website/html/js/utils/message.js"></script>
+  <!-- 新增banner代码 -->
+  <script type="text/javascript" src="../data/tms/website/html/js/utils/gsap-minified/gsap.min.js"></script>
+  <script type="text/javascript" src="../data/tms/website/html/js/utils/gsap-minified/ScrollTrigger.min.js"></script>
+  <script type="text/javascript" src="../data/tms/website/html/js/utils/gsap-minified/ScrollToPlugin.min.js"></script>
+  <script type="text/javascript" src="../data/tms/website/html/js/utils/gsap-minified/CSSRulePlugin.min.js"></script>
+  <script type="text/javascript" src="../data/tms/website/html/js/utils/gsap-minified/Observer.min.js"></script>
+  <script type="text/javascript" src="../data/tms/website/html/js/utils/gsap-minified/PixiPlugin.min.js"></script>
+  <link rel="stylesheet" href="../data/tms/website/html/css/smooth_banner.css">
+  <script type="text/javascript" src="../data/tms/website/html/js/en/about/smooth_banner.js"></script>
+  <script type="text/javascript" src="../data/tms/website/html/js/index.js"></script>
+
+</head>
+
+<body>
+  <div id="contact" @click="closeAll">
+    <div id="header-box"></div>
+    <main>
+      <div class="smooth—banner">
+        <div class="building">
+          <img class="pc-pad" src="../data/tms/website/html/images/contact/contact_bg.jpg">
+          <img class="mb-only building" src="../data/tms/website/html/images/contact/contact_bg_m.jpg">
+        </div>
+
+        <div class="word">
+          <div class="l">
+            <img class="logo_s" src="../data/tms/website/html/images/about/banner_logo.png">
+            <div class="title">CONTACT </div>
+          </div>
+          <div class="w">
+            Thank you for paying attention to JETOUR.Your comments and suggestions are also cordially welcomed，please
+            feel free
+            to tell us.
+          </div>
+        </div>
+      </div>
+      <div class="content-box">
+        <div class="form">
+          <div>
+            <div class="title">WRITE TO US</div>
+            <div class="description">
+              Thank you for paying attention to JETOUR and please leave your contact messages below, your comments and
+              suggestions are also cordially welcomed. Please feel free to tell us and we will answer you as soon as
+              possible.
+            </div>
+          </div>
+
+          <div class="bottom">
+            <div class="box1">
+              <div class="left">
+                <div class="top">
+                  <span>*</span>
+                  <input type="text" v-model="firstName" placeholder="First Name">
+                </div>
+                <div v-if="firstNameReq" class="bottom1">
+                  First Name is a required field.
+                </div>
+              </div>
+              <div class="right">
+                <div class="top">
+                  <span>*</span>
+                  <input type="text" v-model="lastName" placeholder="Last Name">
+                </div>
+                <div v-if="lastNameReq" class="bottom1">
+                  Last Name is a required field.
+                </div>
+              </div>
+            </div>
+            <div class="box1 box2">
+              <div class="left">
+                <div class="top" @click.stop="countryClick">
+                  <span>*</span>
+                  <input v-model="country" type="text" placeholder="Country">
+                  <img src="../data/tms/website/html/images/contact/arrow.png" alt="">
+                </div>
+                <div v-if="countryReq" class="bottom1">
+                  Country is a required field.
+                </div>
+                <ul v-if="ulShow">
+                  <li @click="chooseCountry(item.country_name_en)" v-for="(item,index) in countryList" :key="index">
+                    {{item.country_name_en}}
+                  </li>
+                </ul>
+              </div>
+              <div class="right">
+                <div class="top" @click.stop="businessClick">
+                  <input type="text" v-model="business" readonly="" placeholder="Business">
+                  <img src="../data/tms/website/html/images/contact/arrow.png" alt="">
+                  <ul v-if="businessShow">
+                    <li @click.stop="chooseBusiness(item)" v-for="(item,index) in businessList" :key="index">
+                      {{item}}
+                    </li>
+                  </ul>
+                </div>
+                <div class="bottom1" v-if="emailReq">&nbsp;</div>
+              </div>
+            </div>
+            <div class="box1 box2">
+              <div class="left">
+                <div class="top">
+                  <span>*</span>
+                  <input v-model="city" type="text" placeholder="City">
+                </div>
+                <div class="bottom1" v-if="cityReq">
+                  City is a required field.
+                </div>
+              </div>
+              <div class="right">
+                <div class="top">
+                  <span>*</span>
+                  <input v-model="dealer" type="text" placeholder="Dealer Name">
+                </div>
+                <div class="bottom1" v-if="dealerReq">
+                  Dealer Name is a required field.
+                </div>
+              </div>
+            </div>
+            <div class="box1 box2">
+              <div class="left">
+                <div class="top">
+                  <span>*</span>
+                  <input v-model="email" v-bind:type="eailpassword" placeholder="E-mail">
+                  <img src="../data/tms/website/html/images/contact/password_off.png" alt="" class="password_icon" v-if="eailpassword =='password'" @click.stop="eailPasswordClick">
+                  <img src="../data/tms/website/html/images/contact/password_on.png" alt="" class="password_icon" v-if="eailpassword !='password'" @click.stop="eailPasswordClick">
+                </div>
+                <div class="bottom1" v-if="emailReq">
+                  E-mai is a required field.
+                </div>
+              </div>
+              <div class="right">
+                <div class="top">
+                  <input v-model="mobile" v-bind:type="mobile_password" placeholder="Mobile">
+                  <img src="../data/tms/website/html/images/contact/password_off.png" alt="" class="password_icon" v-if="mobile_password =='password'" @click.stop="mobilePasswordClick">
+                  <img src="../data/tms/website/html/images/contact/password_on.png" alt="" class="password_icon" v-if="mobile_password !='password'" @click.stop="mobilePasswordClick">
+                </div>
+              </div>
+            </div>
+
+            <div class="box4">
+              <textarea name="" placeholder="*Please leave your precious message." id="" v-model="message" cols="30" rows="10"></textarea>
+              <div class="bottom1" v-if="msgReq">
+                Message is a required field.
+              </div>
+            </div>
+
+            <div class="box6">
+              <div class="select" @click="agree">
+                <img v-if="isAgree" src="../data/tms/website/html/images/common/select.png" alt="">
+              </div>
+              <div class="text" @click="window.open('/agree')">
+                I have read and agree to the <span>Privacy Policy</span>.
+              </div>
+              <div class="bottom1" v-if="agreeMsg">
+                Please agree to the privacy agreement
+              </div>
+            </div>
+            <div @click="submit" class="box5 button-bubble">Send</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="footer-box"></div>
+    <div id="footer-mb-box"></div>
+  </div>
+</body>
+
+<script src="../data/tms/website/html/js/utils/scrollReveal.js"></script>
+<script src="../data/tms/website/html/js/index.js"></script>
+<script>
+  var vm = new Vue({
+    el: "#contact",
+    data() {
+      return {
+        countryList: [],
+        black: false,
+        businessList: [
+          "Business",
+          "Purchase Intention",
+          "Test Drive",
+          "Service Support",
+        ],
+        businessShow: false,
+        ulShow: false,
+        firstNameReq: false,
+        lastNameReq: false,
+        countryReq: false,
+        cityReq: false,
+        dealerReq: false,
+        emailReq: false,
+        msgReq: false,
+        isAgree: false,
+        agreeMsg: false,
+        firstName: "",
+        lastName: "",
+        country: "",
+        city: '',
+        dealer: '',
+        business: "",
+        email: "",
+        mobile: "",
+        message: "",
+        eailpassword: 'password',
+        mobile_password: 'password',
+      };
+    },
+    mounted() {
+      this.getCountryList();
+    },
+    watch: {
+      country(n, o) {
+        if (this.fuzzyQuery(this.countryList, n).length > 0) {
+          this.countryList = this.fuzzyQuery(this.countryList, n);
+        }
+        if (!n) {
+          this.getCountryList();
+        }
+        let name = this.countryList.find((item) => {
+          return item.country_name_en == n;
+        });
+        if (name) {
+          this.black = true;
+        }
+      },
+    },
+    methods: {
+      // 获取国家列表
+      getCountryList() {
+        $.ajax({
+          url: "/prj/archive/getCountryList?categoryCode=contactus",
+          type: "post",
+          dataType: "json",
+          success: (res) => {
+            console.log(res);
+            if (res.code == 200) {
+              this.countryList = res.data;
+            }
+          },
+        });
+      },
+      // 模糊查询
+      fuzzyQuery(list, keyWord) {
+        var reg = new RegExp(keyWord);
+        var arr = [];
+        for (var i = 0; i < list.length; i++) {
+          if (reg.test(list[i].country_name_en)) {
+            arr.push(list[i]);
+          }
+        }
+        return arr;
+      },
+      closeAll() {
+        this.ulShow = false;
+        this.businessShow = false;
+      },
+      countryClick() {
+        this.ulShow = true;
+        this.black = false;
+      },
+      businessClick() {
+        this.businessShow = true;
+      },
+      eailPasswordClick() {
+        this.eailpassword = this.eailpassword == 'password' ? 'text' : 'password';
+      },
+      mobilePasswordClick() {
+        this.mobile_password = this.mobile_password == 'password' ? 'text' : 'password';
+      },
+      //选择国家
+      chooseCountry(value) {
+        this.ulShow = false;
+        this.black = true;
+        this.country = value;
+      },
+      chooseBusiness(value) {
+        this.businessShow = false;
+        this.business = value;
+      },
+      agree() {
+        this.isAgree = !this.isAgree;
+      },
+      submit() {
+        let reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        if (!this.firstName) {
+          this.firstNameReq = true;
+          return;
+        } else {
+          this.firstNameReq = false;
+        }
+        if (!this.lastName) {
+          this.lastNameReq = true;
+          return;
+        } else {
+          this.lastNameReq = false;
+        }
+        if (!this.country) {
+          this.countryReq = true;
+          return;
+        } else {
+          this.countryReq = false;
+        }
+        if (!this.city) {
+          this.cityReq = true;
+          return;
+        } else {
+          this.cityReq = false;
+        }
+        if (!this.dealer) {
+          this.dealerReq = true;
+          return;
+        } else {
+          this.dealerReq = false;
+        }
+        if (!reg.test(this.email)) {
+          this.emailReq = true;
+          return;
+        } else {
+          this.emailReq = false;
+        }
+        if (!this.message) {
+          this.msgReq = true;
+          return;
+        } else {
+          this.msgReq = false;
+        }
+        if (!this.isAgree) {
+          this.agreeMsg = true;
+        } else {
+          this.agreeMsg = false;
+        }
+        let name = this.countryList.find((item) => {
+          return item.country_name_en == this.country;
+        });
+        let data = {
+          first_name: this.firstName,
+          last_name: this.lastName,
+          country: name.country_name_en,
+          city: this.city,
+          dealer: this.dealer,
+          mail: this.email,
+          tel: this.mobile,
+          remarks: this.message,
+          activity_name: this.business,
+          channel: "contact us",
+          langCode: "en",
+        };
+        if (this.black) {
+          $.ajax({
+            url: "/prj/archive/addInformation",
+            type: "post",
+            dataType: "json",
+            data: data,
+            success: function (res) {
+              if (res.code == 200) {
+                message.success("Submit successfully !");
+                vm.$nextTick(function () {
+	                this.firstName = "";
+	                this.lastName = "";
+	                this.country = "";
+	                this.city = "";
+	                this.dealer = "";
+	                this.email = "";
+	                this.business = "";
+	                this.mobile = "";
+	                this.message = "";
+	                this.isAgree = false;
+                })
+              }else{
+              	message.success("Please try again later !");
+              }
+            },
+          });
+        }
+      },
+    },
+  });
+</script>
+<!-- 引入header组件 -->
+<script type="text/babel" src="../data/tms/website/html/scripts/header.js"></script>
+<script type="text/babel" src="../data/tms/website/html/components/common/header/menu.js"></script>
+<!-- 引入footer组件 -->
+<script type="text/babel" src="../data/tms/website/html/components/common/footer/footer.js"></script>
+<script type="text/babel" src="../data/tms/website/html/components/common/footer/footer-mb.js"></script>
+
+</html>
