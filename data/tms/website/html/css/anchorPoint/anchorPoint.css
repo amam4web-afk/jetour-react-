@@ -1,0 +1,172 @@
+#anchor-pc-point {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2500;
+}
+
+.anchor-point-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #2c2e2e;
+  padding: 0 0.8rem;
+}
+
+.anchor-point-box img {
+  width: 2rem;
+  margin-right: 1.1rem;
+}
+
+.anchor-point-box .anchor-point {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 0.7rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.anchor-point-box .anchor-point li {
+  color: #bbb;
+  font-size: 0.16rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  height: calc(100% - 0.05rem);
+  
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.anchor-point-box .anchor-point .scroll-nav-active {
+  color: #fff;
+  /* border-bottom: 0.05rem solid #ee7b3a; */
+  border-bottom: 0.05rem solid #39aeb2;
+}
+
+.anchor-point-box .btn {
+  width: 2rem;
+  height: 0.43rem;
+  border: 1px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 0.16rem;
+  
+  color: #fff;
+  cursor: pointer;
+}
+
+#anchor-mb-point {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2500;
+}
+
+#anchor-mb-point .anchor-point-box-mb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #2d2d2d;
+  color: #fff;
+  height: 1.1rem;
+}
+
+#anchor-mb-point .anchor-point-box-mb .test-drive-box {
+  width: 3.27rem;
+  padding: 0.2rem 0.2rem;
+  height: 100%;
+  box-shadow: 0.14rem 0.05rem 0.19rem 0.02rem rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0.14rem 0.05rem 0.19rem 0.02rem rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0.14rem 0.05rem 0.19rem 0.02rem rgba(0, 0, 0, 0.3);
+}
+
+#anchor-mb-point .anchor-point-box-mb .test-drive-box .test-drive {
+  border: 1px solid #8c8c8c;
+  font-size: 0.26rem;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  
+}
+
+#anchor-mb-point .anchor-point-box-mb img {
+  width: 2rem;
+  padding: 0 0.3rem;
+}
+
+#anchor-mb-point .anchor-point-box-mb ul {
+  overflow-x: auto;
+  overflow-y: hidden;
+  word-break: break-all;
+  white-space: nowrap;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+#anchor-mb-point .anchor-point-box-mb ul li {
+  margin: 0 0.2rem;
+  opacity: 0.7;
+  line-height: 1rem;
+  display: inline-block;
+  height: 100%;
+  font-size: 0.26rem;
+  color: rgba(255, 255, 255, 0.44);
+}
+
+#anchor-mb-point .scroll-nav-active-mb {
+  color: white !important;
+  font-weight: bold;
+  position: relative;
+}
+
+#anchor-mb-point .scroll-nav-active-mb::after {
+  width: 100%;
+  height: 0.05rem;
+  /* background-color: #f08c57; */
+  background-color: #39aeb2;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  content: "";
+}
+
+/*# sourceMappingURL=anchorPoint.css.map */
